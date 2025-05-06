@@ -67,7 +67,7 @@
 ## Prerequisites
 
 - Python 3.9+  
-- [Ollama](https://ollama.com/) installed locally  
+- [Ollama]([https://ollama.com/](https://ollama.com/download)) installed locally  
 - No GPU required  
 - miniconda installed
 - Terminal/PowerShell access  
