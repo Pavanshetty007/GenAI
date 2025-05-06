@@ -107,8 +107,8 @@ ollama list
 ## Installation
 
 ```bash
-git clone https://github.com/yourusername/adova-rag-chat.git
-cd adova-rag-chat
+git clone https://github.com/Pavanshetty007/GenAI.git
+cd GenAI/PDF_RAG
 
 # Create & activate a conda environment
 conda create -n rag-chat python=3.10 -y
