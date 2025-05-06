@@ -1,4 +1,4 @@
-# 📚 PDF Document Query Application (Hybrid RAG Chat)
+# 📚 PDF Document Query Application 
 
 *A Retrieval‑Augmented Generation (RAG) system over multiple PDF documents, featuring BM25 + TF‑IDF hybrid retrieval, Knowledge Graph lookup and timestamped chat history.*
 
