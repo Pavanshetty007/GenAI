@@ -1,4 +1,15 @@
-# utils/pdf_utils.py
+"""
+PDF Processing Module
+
+This module handles:
+- Copying uploaded PDF files to the local `static/` directory
+- Extracting and chunking text from each PDF using pdfplumber and LangChain's text splitter
+- Maintaining chunk-to-document mapping for retrieval
+- Updating dense (TF-IDF) and sparse (BM25) retrieval indices
+- Logging processing statuses and returning user-readable summaries
+
+Used in the context of a Hybrid RAG (Retrieval-Augmented Generation) application.
+"""
 
 import os
 import shutil
