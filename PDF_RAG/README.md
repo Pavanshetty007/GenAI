@@ -91,8 +91,7 @@ pdf_rag_app/
     ├── sparse_retriever.py    
     ├── dense_retriever.py    
     ├── hybrid_retriever.py    
-    ├── kg_utils.py            
-    ├── keywords.py           
+    ├── kg_utils.py                       
     └── rag_utils.py          
 ```
 
