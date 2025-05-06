@@ -1,0 +1,10 @@
+gradio>=3.30
+pdfplumber>=0.8.0
+langchain>=0.0.328
+whoosh>=2.7.4
+scikit-learn>=1.2.2
+rdflib>=6.3.2
+spacy>=3.5.0
+PyMuPDF>=1.22.5
+ollama>=0.1.0
+python-dotenv>=1.0.0
