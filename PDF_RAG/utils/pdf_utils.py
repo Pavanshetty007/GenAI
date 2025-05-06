@@ -1,19 +1,13 @@
-"""
-This module handles PDF ingestion for a Retrieval-Augmented Generation (RAG) pipeline.
-It extracts text from uploaded PDF files, splits them into chunks, updates the global state,
-and rebuilds retrieval indices.
+# utils/pdf_utils.py
 
-Functions:
-- process_uploaded_files: Reads PDFs, chunks text, and updates dense and sparse retrieval indexes.
-"""
-
-import pdfplumber, os
+import os
+import shutil
+import pdfplumber
 from hashlib import md5
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from config import CHUNK_SIZE, CHUNK_OVERLAP
 from utils.state import state
 from utils.logger import get_logger
-
 from .dense_retriever import update_dense_index
 from .sparse_retriever import update_bm25_index
 
@@ -21,57 +15,118 @@ logger = get_logger(__name__)
 
 def process_uploaded_files(files):
     """
-    Processes a list of uploaded PDF files by extracting text, splitting it into chunks,
-    and updating the system's document state and retrieval indexes.
-
-    Steps:
-    - Skips already-processed documents using an MD5 hash.
-    - Extracts raw text using pdfplumber (one string per file).
-    - Splits the text into overlapping chunks using LangChain's RecursiveCharacterTextSplitter.
-    - Updates the global state with:
-        - Chunk data per document.
-        - Mapping from chunk indices to documents.
-    - Rebuilds both dense (TF-IDF) and sparse (BM25) retrieval indexes.
-
-    Args:
-        files (List[gr.File]): List of uploaded file objects from Gradio's File component.
-
-    Returns:
-        str: A status message indicating how many new documents were processed and the total chunk count.
+    Processes uploaded PDF files:
+    - Copies each PDF into `static/` for serving
+    - Safely extracts text page-by-page, skipping corrupted/unreadable PDFs
+    - Splits text into chunks with page tracking
+    - Rebuilds dense and sparse indices
+    - Returns detailed per-file status messages for the UI
     """
     if not files:
-        logger.warning("process_uploaded_files called with no files.")
+        logger.warning("No files provided to process_uploaded_files.")
         return "No files uploaded."
-    new_docs = 0
-    try:
-        for f in files:
-            file_path = f.name
-            h = md5(open(file_path,"rb").read()).hexdigest()
-            if h in state.processed_documents:
-                continue
-            # extract & chunk
-            try:
-                with pdfplumber.open(file_path) as pdf:
-                    text = "\n".join(page.extract_text() or "" for page in pdf.pages)
-            except Exception as e:
-                logger.error(f"Error extracting text from {file_path}: {e}", exc_info=True)
-                continue
-            splitter = RecursiveCharacterTextSplitter(
-                chunk_size=CHUNK_SIZE, chunk_overlap=CHUNK_OVERLAP, length_function=len
-            )
-            chunks = splitter.split_text(text)
-            state.processed_documents[h] = {"chunks": chunks, "meta": os.path.basename(file_path)}
-            start = len(state.all_chunks)
-            state.all_chunks.extend(chunks)
-            for idx in range(start, len(state.all_chunks)):
-                state.chunk_to_doc_map[idx] = h
-            new_docs += 1
 
-        # rebuild indices
+    os.makedirs("static", exist_ok=True)
+    processed_count = 0
+    messages = []
+
+    for f in files:
+        orig_path   = f.name
+        filename    = os.path.basename(orig_path)
+        static_path = os.path.join("static", filename)
+
+        # 1) Copy PDF to static for serving
+        try:
+            shutil.copy(orig_path, static_path)
+            logger.info("Copied PDF %s to static folder.", filename)
+        except Exception as e:
+            msg = f"❌ Failed to copy {filename}: {e}"
+            logger.error(msg, exc_info=True)
+            messages.append(msg)
+            continue
+
+        # 2) Compute document hash
+        try:
+            with open(orig_path, "rb") as fh:
+                file_hash = md5(fh.read()).hexdigest()
+        except Exception as e:
+            msg = f"❌ Failed to hash {filename}: {e}"
+            logger.error(msg, exc_info=True)
+            messages.append(msg)
+            continue
+
+        if file_hash in state.processed_documents:
+            msg = f"ℹ️ Skipping already-processed {filename}"
+            logger.info(msg)
+            messages.append(msg)
+            continue
+
+        # 3) Extract text, skip any read errors
+        try:
+            text = ""
+            with pdfplumber.open(orig_path) as pdf:
+                for page in pdf.pages:
+                    page_text = page.extract_text() or ""
+                    text += page_text + "\f"
+            logger.info("Extracted text from %s", filename)
+        except Exception as e:
+            msg = f"⚠️ Skipping unreadable PDF {filename}: {e}"
+            logger.warning(msg, exc_info=True)
+            messages.append(msg)
+            continue
+
+        # 4) Chunk text with page tracking
+        try:
+            pages        = text.split("\f")
+            all_chunks   = []
+            page_indices = []
+            splitter     = RecursiveCharacterTextSplitter(
+                chunk_size=CHUNK_SIZE,
+                chunk_overlap=CHUNK_OVERLAP,
+                length_function=len
+            )
+            for pi, pg in enumerate(pages):
+                chunks = splitter.split_text(pg)
+                all_chunks.extend(chunks)
+                page_indices.extend([pi] * len(chunks))
+            logger.info("Split %s into %d chunks", filename, len(all_chunks))
+        except Exception as e:
+            msg = f"❌ Error chunking {filename}: {e}"
+            logger.error(msg, exc_info=True)
+            messages.append(msg)
+            continue
+
+        # 5) Update global state
+        try:
+            state.processed_documents[file_hash] = {
+                "chunks": all_chunks,
+                "pages":  page_indices,
+                "meta":   static_path
+            }
+            start_idx = len(state.all_chunks)
+            state.all_chunks.extend(all_chunks)
+            for idx in range(start_idx, len(state.all_chunks)):
+                state.chunk_to_doc_map[idx] = file_hash
+            processed_count += 1
+            msg = f"✅ Processed {filename} ({len(all_chunks)} chunks)"
+            logger.info(msg)
+            messages.append(msg)
+        except Exception as e:
+            msg = f"❌ Error updating state for {filename}: {e}"
+            logger.error(msg, exc_info=True)
+            messages.append(msg)
+            continue
+
+    # 6) Rebuild retrieval indices
+    try:
         update_dense_index()
         update_bm25_index()
+        summary = f"🏁 Done: {processed_count} new docs, {len(state.all_chunks)} total chunks"
+        logger.info(summary)
+        messages.append(summary)
     except Exception as e:
-        logger.critical(f"Unexpected error in process_uploaded_files: {e}", exc_info=True)
-        return f"Error processing files: {e}"
-    logger.info(f"Processed {new_docs} new docs; total chunks: {len(state.all_chunks)}")
-    return f"✅ Processed {new_docs} new doc(s). Total chunks: {len(state.all_chunks)}"
+        msg = f"❌ Failed to rebuild indices: {e}"
+        logger.critical(msg, exc_info=True)
+        messages.append(msg)
+
+    return "\n".join(messages)

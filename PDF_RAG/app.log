@@ -1,0 +1,282 @@
+2025-05-06 22:15:38,565 INFO:utils.kg_utils: Loaded spaCy model 'en_core_web_sm'.
+2025-05-06 22:15:39,677 INFO:httpx: HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-05-06 22:15:39,900 INFO:httpx: HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2025-05-06 22:15:40,331 INFO:httpx: HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-05-06 22:15:42,794 ERROR:asyncio: Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Pavan\anaconda3\envs\rag-chat\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Pavan\anaconda3\envs\rag-chat\lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-05-06 22:16:09,941 INFO:utils.pdf_utils: Copied PDF attention.pdf to static folder.
+2025-05-06 22:16:09,978 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:16:09,978 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:16:09,978 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:16:09,978 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:16:09,990 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:16:09,992 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:16:09,994 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:16:09,994 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:16:09,994 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:16:09,994 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:16:09,994 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:16:09,994 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:16:10,005 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:16:10,008 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:16:10,008 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:16:18,424 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:16:18,424 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:16:18,424 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:16:18,424 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:16:18,424 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:16:18,424 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:16:18,424 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:16:18,424 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:16:18,424 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:16:18,424 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:16:18,424 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:16:18,424 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:16:18,439 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:16:18,439 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:16:18,439 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:16:18,440 INFO:utils.pdf_utils: Extracted text from attention.pdf
+2025-05-06 22:16:18,444 INFO:utils.pdf_utils: Split attention.pdf into 94 chunks
+2025-05-06 22:16:18,446 INFO:utils.pdf_utils: ✅ Processed attention.pdf (94 chunks)
+2025-05-06 22:16:18,472 INFO:utils.dense_retriever: Dense index built with 94 chunks.
+2025-05-06 22:16:18,491 INFO:utils.sparse_retriever: Created new Whoosh BM25 index in bm25_index
+2025-05-06 22:16:18,932 INFO:utils.sparse_retriever: Indexed 94 chunks into BM25 index.
+2025-05-06 22:16:18,933 INFO:utils.sparse_retriever: BM25 index updated in application state.
+2025-05-06 22:16:18,933 INFO:utils.pdf_utils: 🏁 Done: 1 new docs, 94 total chunks
+2025-05-06 22:16:54,666 INFO:utils.pdf_utils: Copied PDF attention.pdf to static folder.
+2025-05-06 22:16:54,671 INFO:utils.pdf_utils: ℹ️ Skipping already-processed attention.pdf
+2025-05-06 22:16:54,678 INFO:utils.dense_retriever: Dense index built with 94 chunks.
+2025-05-06 22:16:54,683 INFO:utils.sparse_retriever: Created new Whoosh BM25 index in bm25_index
+2025-05-06 22:16:54,875 INFO:utils.sparse_retriever: Indexed 94 chunks into BM25 index.
+2025-05-06 22:16:54,875 INFO:utils.sparse_retriever: BM25 index updated in application state.
+2025-05-06 22:16:54,875 INFO:utils.pdf_utils: 🏁 Done: 0 new docs, 94 total chunks
+2025-05-06 22:17:20,359 INFO:utils.pdf_utils: Copied PDF attention.pdf to static folder.
+2025-05-06 22:17:20,378 INFO:utils.pdf_utils: ℹ️ Skipping already-processed attention.pdf
+2025-05-06 22:17:20,393 INFO:utils.pdf_utils: Copied PDF broken.pdf to static folder.
+2025-05-06 22:17:20,393 WARNING:utils.pdf_utils: ⚠️ Skipping unreadable PDF broken.pdf: No /Root object! - Is this really a PDF?
+Traceback (most recent call last):
+  File "C:\Users\Pavan\anaconda3\envs\rag-chat\lib\site-packages\pdfplumber\pdf.py", line 50, in __init__
+    self.doc = PDFDocument(PDFParser(stream), password=password or "")
+  File "C:\Users\Pavan\anaconda3\envs\rag-chat\lib\site-packages\pdfminer\pdfdocument.py", line 738, in __init__
+    raise PDFSyntaxError("No /Root object! - Is this really a PDF?")
+pdfminer.pdfparser.PDFSyntaxError: No /Root object! - Is this really a PDF?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Pavan\Desktop\Learning\gen ai\GenAI\PDF_RAG\utils\pdf_utils.py", line 67, in process_uploaded_files
+    with pdfplumber.open(orig_path) as pdf:
+  File "C:\Users\Pavan\anaconda3\envs\rag-chat\lib\site-packages\pdfplumber\pdf.py", line 107, in open
+    return cls(
+  File "C:\Users\Pavan\anaconda3\envs\rag-chat\lib\site-packages\pdfplumber\pdf.py", line 52, in __init__
+    raise PdfminerException(e)
+pdfplumber.utils.exceptions.PdfminerException: No /Root object! - Is this really a PDF?
+2025-05-06 22:17:20,408 INFO:utils.dense_retriever: Dense index built with 94 chunks.
+2025-05-06 22:17:20,423 INFO:utils.sparse_retriever: Created new Whoosh BM25 index in bm25_index
+2025-05-06 22:17:20,695 INFO:utils.sparse_retriever: Indexed 94 chunks into BM25 index.
+2025-05-06 22:17:20,695 INFO:utils.sparse_retriever: BM25 index updated in application state.
+2025-05-06 22:17:20,697 INFO:utils.pdf_utils: 🏁 Done: 0 new docs, 94 total chunks
+2025-05-06 22:17:38,693 INFO:utils.rag_utils: Cleared all documents and indices from state.
+2025-05-06 22:17:41,425 INFO:utils.pdf_utils: Copied PDF attention.pdf to static folder.
+2025-05-06 22:17:41,492 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:17:41,492 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:17:41,492 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:17:41,507 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:17:41,508 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:17:41,508 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:17:41,508 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:17:41,508 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:17:41,520 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:17:41,524 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:17:41,525 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:17:41,525 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:17:41,525 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:17:41,525 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:17:41,536 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:17:47,558 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:17:47,558 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:17:47,558 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:17:47,558 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:17:47,558 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:17:47,558 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:17:47,558 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:17:47,558 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:17:47,558 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:17:47,558 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:17:47,558 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:17:47,558 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:17:47,558 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:17:47,558 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:17:47,573 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:17:47,574 INFO:utils.pdf_utils: Extracted text from attention.pdf
+2025-05-06 22:17:47,575 INFO:utils.pdf_utils: Split attention.pdf into 94 chunks
+2025-05-06 22:17:47,575 INFO:utils.pdf_utils: ✅ Processed attention.pdf (94 chunks)
+2025-05-06 22:17:47,580 INFO:utils.pdf_utils: Copied PDF broken.pdf to static folder.
+2025-05-06 22:17:47,580 WARNING:utils.pdf_utils: ⚠️ Skipping unreadable PDF broken.pdf: No /Root object! - Is this really a PDF?
+Traceback (most recent call last):
+  File "C:\Users\Pavan\anaconda3\envs\rag-chat\lib\site-packages\pdfplumber\pdf.py", line 50, in __init__
+    self.doc = PDFDocument(PDFParser(stream), password=password or "")
+  File "C:\Users\Pavan\anaconda3\envs\rag-chat\lib\site-packages\pdfminer\pdfdocument.py", line 738, in __init__
+    raise PDFSyntaxError("No /Root object! - Is this really a PDF?")
+pdfminer.pdfparser.PDFSyntaxError: No /Root object! - Is this really a PDF?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Pavan\Desktop\Learning\gen ai\GenAI\PDF_RAG\utils\pdf_utils.py", line 67, in process_uploaded_files
+    with pdfplumber.open(orig_path) as pdf:
+  File "C:\Users\Pavan\anaconda3\envs\rag-chat\lib\site-packages\pdfplumber\pdf.py", line 107, in open
+    return cls(
+  File "C:\Users\Pavan\anaconda3\envs\rag-chat\lib\site-packages\pdfplumber\pdf.py", line 52, in __init__
+    raise PdfminerException(e)
+pdfplumber.utils.exceptions.PdfminerException: No /Root object! - Is this really a PDF?
+2025-05-06 22:17:47,591 INFO:utils.dense_retriever: Dense index built with 94 chunks.
+2025-05-06 22:17:47,591 INFO:utils.sparse_retriever: Created new Whoosh BM25 index in bm25_index
+2025-05-06 22:17:47,925 INFO:utils.sparse_retriever: Indexed 94 chunks into BM25 index.
+2025-05-06 22:17:47,925 INFO:utils.sparse_retriever: BM25 index updated in application state.
+2025-05-06 22:17:47,925 INFO:utils.pdf_utils: 🏁 Done: 1 new docs, 94 total chunks
+2025-05-06 22:20:13,991 INFO:utils.rag_utils: Cleared all documents and indices from state.
+2025-05-06 22:20:15,075 INFO:utils.pdf_utils: Copied PDF attention.pdf to static folder.
+2025-05-06 22:20:15,141 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:20:15,142 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:20:15,142 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:20:15,142 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:20:15,142 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:20:15,156 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:20:15,158 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:20:15,158 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:20:15,158 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:20:15,158 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:20:15,158 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:20:15,174 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:20:15,175 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:20:15,175 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:20:15,175 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:20:20,974 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:20:20,974 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:20:20,974 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:20:20,974 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:20:20,974 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:20:20,984 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:20:20,984 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:20:20,984 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:20:20,984 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:20:20,984 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:20:20,984 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:20:20,984 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:20:20,984 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:20:20,984 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:20:20,984 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:20:20,984 INFO:utils.pdf_utils: Extracted text from attention.pdf
+2025-05-06 22:20:20,984 INFO:utils.pdf_utils: Split attention.pdf into 94 chunks
+2025-05-06 22:20:20,984 INFO:utils.pdf_utils: ✅ Processed attention.pdf (94 chunks)
+2025-05-06 22:20:20,989 INFO:utils.pdf_utils: Copied PDF broken.pdf to static folder.
+2025-05-06 22:20:20,991 WARNING:utils.pdf_utils: ⚠️ Skipping unreadable PDF broken.pdf: No /Root object! - Is this really a PDF?
+Traceback (most recent call last):
+  File "C:\Users\Pavan\anaconda3\envs\rag-chat\lib\site-packages\pdfplumber\pdf.py", line 50, in __init__
+    self.doc = PDFDocument(PDFParser(stream), password=password or "")
+  File "C:\Users\Pavan\anaconda3\envs\rag-chat\lib\site-packages\pdfminer\pdfdocument.py", line 738, in __init__
+    raise PDFSyntaxError("No /Root object! - Is this really a PDF?")
+pdfminer.pdfparser.PDFSyntaxError: No /Root object! - Is this really a PDF?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Pavan\Desktop\Learning\gen ai\GenAI\PDF_RAG\utils\pdf_utils.py", line 67, in process_uploaded_files
+    with pdfplumber.open(orig_path) as pdf:
+  File "C:\Users\Pavan\anaconda3\envs\rag-chat\lib\site-packages\pdfplumber\pdf.py", line 107, in open
+    return cls(
+  File "C:\Users\Pavan\anaconda3\envs\rag-chat\lib\site-packages\pdfplumber\pdf.py", line 52, in __init__
+    raise PdfminerException(e)
+pdfplumber.utils.exceptions.PdfminerException: No /Root object! - Is this really a PDF?
+2025-05-06 22:20:21,003 INFO:utils.dense_retriever: Dense index built with 94 chunks.
+2025-05-06 22:20:21,010 INFO:utils.sparse_retriever: Created new Whoosh BM25 index in bm25_index
+2025-05-06 22:20:21,341 INFO:utils.sparse_retriever: Indexed 94 chunks into BM25 index.
+2025-05-06 22:20:21,341 INFO:utils.sparse_retriever: BM25 index updated in application state.
+2025-05-06 22:20:21,341 INFO:utils.pdf_utils: 🏁 Done: 1 new docs, 94 total chunks
+2025-05-06 22:20:22,658 INFO:utils.rag_utils: Cleared all documents and indices from state.
+2025-05-06 22:20:33,858 WARNING:utils.pdf_utils: No files provided to process_uploaded_files.
+2025-05-06 22:20:37,708 WARNING:utils.kg_utils: query_kg called but state.kg is None.
+2025-05-06 22:20:37,709 WARNING:utils.sparse_retriever: retrieve_sparse called but bm25_index is None.
+2025-05-06 22:20:37,709 WARNING:utils.dense_retriever: retrieve_dense called but dense index is not available.
+2025-05-06 22:20:37,710 INFO:utils.hybrid_retriever: Hybrid retrieval: got 0 sparse hits and 0 dense hits for query ''.
+2025-05-06 22:20:37,711 INFO:utils.hybrid_retriever: Hybrid retrieval: returning 0 top results for query ''.
+2025-05-06 22:21:11,295 INFO:httpx: HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-05-06 22:21:11,329 INFO:utils.rag_utils: Ollama response generated for query: 
+2025-05-06 22:21:11,332 INFO:utils.rag_utils: Assistant response appended.
+2025-05-06 22:23:11,359 INFO:utils.kg_utils: Loaded spaCy model 'en_core_web_sm'.
+2025-05-06 22:23:12,335 INFO:httpx: HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-05-06 22:23:12,494 INFO:httpx: HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2025-05-06 22:23:12,814 INFO:httpx: HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-05-06 22:23:30,940 INFO:utils.pdf_utils: Copied PDF broken.pdf to static folder.
+2025-05-06 22:23:30,940 WARNING:utils.pdf_utils: ⚠️ Skipping unreadable PDF broken.pdf: No /Root object! - Is this really a PDF?
+Traceback (most recent call last):
+  File "C:\Users\Pavan\anaconda3\envs\rag-chat\lib\site-packages\pdfplumber\pdf.py", line 50, in __init__
+    self.doc = PDFDocument(PDFParser(stream), password=password or "")
+  File "C:\Users\Pavan\anaconda3\envs\rag-chat\lib\site-packages\pdfminer\pdfdocument.py", line 738, in __init__
+    raise PDFSyntaxError("No /Root object! - Is this really a PDF?")
+pdfminer.pdfparser.PDFSyntaxError: No /Root object! - Is this really a PDF?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Pavan\Desktop\Learning\gen ai\GenAI\PDF_RAG\utils\pdf_utils.py", line 67, in process_uploaded_files
+    with pdfplumber.open(orig_path) as pdf:
+  File "C:\Users\Pavan\anaconda3\envs\rag-chat\lib\site-packages\pdfplumber\pdf.py", line 107, in open
+    return cls(
+  File "C:\Users\Pavan\anaconda3\envs\rag-chat\lib\site-packages\pdfplumber\pdf.py", line 52, in __init__
+    raise PdfminerException(e)
+pdfplumber.utils.exceptions.PdfminerException: No /Root object! - Is this really a PDF?
+2025-05-06 22:23:30,989 INFO:utils.pdf_utils: Copied PDF attention.pdf to static folder.
+2025-05-06 22:23:31,056 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:23:31,056 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:23:31,056 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:23:31,073 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:23:31,073 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:23:31,073 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:23:31,073 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:23:31,090 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:23:31,090 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:23:31,090 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:23:31,101 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:23:31,104 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:23:31,106 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:23:31,108 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:23:31,110 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:23:37,157 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:23:37,172 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:23:37,172 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:23:37,173 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:23:37,173 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:23:37,174 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:23:37,174 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:23:37,174 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:23:37,174 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:23:37,174 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:23:37,174 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:23:37,174 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:23:37,174 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:23:37,174 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:23:37,174 WARNING:pdfminer.pdfpage: CropBox missing from /Page, defaulting to MediaBox
+2025-05-06 22:23:37,174 INFO:utils.pdf_utils: Extracted text from attention.pdf
+2025-05-06 22:23:37,174 INFO:utils.pdf_utils: Split attention.pdf into 94 chunks
+2025-05-06 22:23:37,174 INFO:utils.pdf_utils: ✅ Processed attention.pdf (94 chunks)
+2025-05-06 22:23:37,240 INFO:utils.dense_retriever: Dense index built with 94 chunks.
+2025-05-06 22:23:37,341 INFO:utils.sparse_retriever: Created new Whoosh BM25 index in bm25_index
+2025-05-06 22:23:37,753 INFO:utils.sparse_retriever: Indexed 94 chunks into BM25 index.
+2025-05-06 22:23:37,755 INFO:utils.sparse_retriever: BM25 index updated in application state.
+2025-05-06 22:23:37,755 INFO:utils.pdf_utils: 🏁 Done: 1 new docs, 94 total chunks
+2025-05-06 22:24:20,640 WARNING:utils.kg_utils: query_kg called but state.kg is None.
+2025-05-06 22:24:20,733 INFO:utils.sparse_retriever: retrieve_sparse for query 'what is encoder decoder stack and tell me how many layers are there?' returned 0 hits.
+2025-05-06 22:24:20,742 INFO:utils.dense_retriever: retrieve_dense for query 'what is encoder decoder stack and tell me how many layers are there?' returned 6 hits.
+2025-05-06 22:24:20,743 INFO:utils.hybrid_retriever: Hybrid retrieval: got 0 sparse hits and 6 dense hits for query 'what is encoder decoder stack and tell me how many layers are there?'.
+2025-05-06 22:24:20,743 INFO:utils.hybrid_retriever: Hybrid retrieval: returning 3 top results for query 'what is encoder decoder stack and tell me how many layers are there?'.
+2025-05-06 22:25:05,968 INFO:httpx: HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-05-06 22:25:05,989 INFO:utils.rag_utils: Ollama response generated for query: what is encoder decoder stack and tell me how many layers are there?
+2025-05-06 22:25:05,990 INFO:utils.rag_utils: Assistant response appended.

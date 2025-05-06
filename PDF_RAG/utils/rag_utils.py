@@ -142,6 +142,9 @@ def rag_chat(message: str, history: list[dict]) -> list[dict]:
         list of dict: Updated chat history.
     """
     try:
+        if not message.strip():
+            return history
+    
         # 1) Append user message
         history.append(_format_message("user", message))
         logger.debug("User message appended: %s", message)
