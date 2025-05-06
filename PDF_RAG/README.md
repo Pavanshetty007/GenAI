@@ -1,6 +1,6 @@
 # 📚 PDF Document Query Application (Hybrid RAG Chat)
 
-*A Retrieval‑Augmented Generation (RAG) system over multiple PDF documents, featuring BM25 + TF‑IDF hybrid retrieval, optional Knowledge Graph lookup, auto‑summaries, clickable “View source” PDF links, timestamped chat history, and a keyword cloud sidebar.*
+*A Retrieval‑Augmented Generation (RAG) system over multiple PDF documents, featuring BM25 + TF‑IDF hybrid retrieval, Knowledge Graph lookup and timestamped chat history.*
 
 ---
 
@@ -22,7 +22,7 @@
 
 - **Multi‑PDF Upload & Indexing** via PDFPlumber & LangChain chunking  
 - **Hybrid Retrieval** (BM25 sparse + TF‑IDF dense) with tunable weights  
-- **Knowledge Graph (optional)** using spaCy NER + RDFLib for factual lookups  
+- **Knowledge Graph** using spaCy NER + RDFLib for factual lookups  
 - **Substring Fallback** for exact‑match formulas (e.g. positional encoding)    
 - **Chat History** limited to last 5 exchanges, with Markdown timestamps  
 - **Single Scrollbar UI** in Gradio Chatbot  
@@ -33,8 +33,7 @@
 
 1. **Ingestion**  
    - PDFs are uploaded and copied into `static/`.  
-   - Text is extracted page‑by‑page, delimited by `\f`, then chunked with overlap.  
-   - Each chunk is tracked with its source page number for “View source.”  
+   - Text is extracted page‑by‑page, delimited by `\f`, then chunked with overlap.   
 
 2. **Indexing**  
    - **Dense index**: TF‑IDF vectorizer over chunks → cosine similarity retrieval.  
@@ -46,7 +45,7 @@
    - Select top TOP_K chunks for context.  
 
 4. **Knowledge Graph (KG)**  
-   - (Optional) spaCy NER → RDFLib triples `(entity, has_label, label)`.  
+   - spaCy NER → RDFLib triples `(entity, has_label, label)`.  
    - If a query token matches an entity, return KG result instead of RAG.  
 
 5. **Fallback**  
@@ -116,7 +115,7 @@ conda create -n rag-chat python=3.10 -y
 conda activate rag-chat
 
 # Install dependencies
-pip install --upgrade pip
+python.exe -m pip install --upgrade pip
 pip install -r requirements.txt
 
 # Download spaCy model
@@ -127,6 +126,12 @@ python -m spacy download en_core_web_sm
 ```bash
 python run.py
 ```
+- Open your browser at http://127.0.0.1:7860
+- Upload PDFs in the left panel
+- Click Process PDFs (repeat after adding new docs)
+- Ask questions in the chat box & click Send
+- The last 5 exchanges are retained by default for context.
+- Use the "Clear Chat" button to reset the conversation thread.
 ## Troubleshooting
 - Whoosh index errors:
 
