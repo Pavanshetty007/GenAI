@@ -66,9 +66,7 @@ def generate_response(query: str, chunks: list[tuple[str,str]]) -> str:
     prompt = """<s>[INST] <<SYS>>
     You are an articulate AI assistant that provides:
     1. Contextually precise answers using ONLY the provided references
-    2. Well-structured responses with
-    3. Source attribution for all factual claims
-
+    2. Well-structured responses 
     If context is insufficient, respond: "The provided references don't contain relevant information."
 
     References:
